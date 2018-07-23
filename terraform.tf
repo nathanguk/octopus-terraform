@@ -46,9 +46,9 @@ resource "azurerm_virtual_network" "network" {
 
 # F5 Provider
 provider "bigip" {
-  address  = "#{f5_api_hostname}"
-  username = "#{f5_api_username}"
-  password = "#{f5_api_password}"
+  address  = "${var.f5_api_hostname}"
+  username = "${var.f5_api_username}"
+  password = "${var.f5_api_password}"
 }
 
 resource "bigip_net_route" "route1" {
